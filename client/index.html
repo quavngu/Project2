@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="chatApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Chat</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>HI</h1>
+        <ul>
+            <li><a href="#/login">Login</a></li>
+        </ul>
+
+    	<div ng-view></div>
+
+        <script src="/node_modules/angular/angular.min.js"></script>
+    	<script src="/node_modules/jquery/dist/jquery.js"></script>
+    	<script src="/node_modules/angular-bootstrap-npm/dist/angular-bootstrap.js"></script>
+        <script src="/node_modules/angular-route/angular-route.js"></script>
+    	<script src="/src/app.js"></script>
+        <script src="/src/resource/Socket.js"></script>
+    </body>
+</html>
