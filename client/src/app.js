@@ -1,7 +1,6 @@
 "use strict";
 
-angular.module("chatApp", ["ui.bootstrap"])
-.config($routeProvider) {
+angular.module("chatApp", ["ui.bootstrap"]).config(function($routeProvider) {
 	$routeProvider.when("/login", {
 		templateUrl: "src/login/login.html",
 		controller: "LoginController"
@@ -9,5 +8,8 @@ angular.module("chatApp", ["ui.bootstrap"])
 	when("/room/:id" {
 		templateUrl: "src/room/room.html",
 		controller: "RoomController"
+	}).
+	otherwise ({
+		// TODO
 	})
-}
+});
