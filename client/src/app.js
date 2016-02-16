@@ -5,11 +5,11 @@ angular.module("chatApp", ["ui.bootstrap"]).config(function($routeProvider) {
 		templateUrl: "src/login/login.html",
 		controller: "LoginController"
 	}).
-	when("/room/:id" {
+	when("/room/:id", {
 		templateUrl: "src/room/room.html",
 		controller: "RoomController"
 	}).
 	otherwise ({
 		// TODO
-	})
+	});
 });

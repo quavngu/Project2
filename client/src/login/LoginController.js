@@ -14,6 +14,6 @@ function LoginController($scope, ChatResource) {
 		else {
 			// TODO: Redirect the user to the room list.
 		}
-	})
+	});
 	};
 });

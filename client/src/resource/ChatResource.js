@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 angular.modele("chatApp").factory("ChatResource",
 function ChatResource(){
@@ -10,5 +10,5 @@ function ChatResource(){
 		getRoomList: function getRoomList(callback) {
 			// TODO:
 		}
-	}
+	};
 });
