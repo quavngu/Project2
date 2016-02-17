@@ -1,6 +1,5 @@
 "use strict";
 
-angular.module("chatApp", []);
 angular.module("chatApp", ["ngRoute"]).config(function($routeProvider) {
 	$routeProvider
 	.when("/login", {
