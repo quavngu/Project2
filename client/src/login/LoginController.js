@@ -11,7 +11,7 @@ function LoginController($scope, $http, ChatResource, socket) {
 			$scope.errorMessage = "Login failed";
 		}
 		else {
-			// TODO: Redirect the user to the room list.
+			$location("#/roomlist");
 		}
 	});
 	};
