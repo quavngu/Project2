@@ -7,7 +7,7 @@ module.exports = function ( grunt ) {
      options: {
      	curly:  true,
   		immed:  true,
- 		newcap: true,
+ 		  newcap: true,
   		noarg:  true,
   		sub:    true,
   		boss:   true,
@@ -26,5 +26,5 @@ module.exports = function ( grunt ) {
      }
    }
  };
- grunt.initConfig(taskConfig);
-};
+ build: ['Gruntfile.js', '**/*.js'];
+}

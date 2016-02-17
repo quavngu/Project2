@@ -11,6 +11,6 @@ angular.module("chatApp", ["ngRoute"]).config(function($routeProvider) {
 		controller: "RoomController"
 	})
 	.otherwise ({
-		redirectTo: "/login/login.html"
+		redirectTo: "/login"
 	});
 });
