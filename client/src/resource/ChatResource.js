@@ -1,9 +1,9 @@
 "use strict";
 
-angular.modele("chatApp").factory("ChatResource",
+angular.module("chatApp").factory("ChatResource",
 function ChatResource(){
 	return {
-		login: function login(user, pass, callback) {
+		login: function login(user, callback) {
 			// TODO:
 		},
 

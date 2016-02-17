@@ -1,9 +1,7 @@
 "use strict";
 
-angular.module("chatApp").controller("LoginController", ["$scope", "$http", "socket",
-function LoginController($scope, $http, socket) {
-	$scope.errorMessage = "test";
-/*
+angular.module("chatApp").controller("LoginController", ["$scope", "$http", "ChatResource", "socket",
+function LoginController($scope, $http, ChatResource, socket) {
 	$scope.user = "";
 	$scope.errorMessage = "";
 
@@ -16,5 +14,5 @@ function LoginController($scope, $http, socket) {
 			// TODO: Redirect the user to the room list.
 		}
 	});
-	};*/
+	};
 }]);
