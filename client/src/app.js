@@ -10,6 +10,10 @@ angular.module("chatApp", ["ngRoute"]).config(function($routeProvider) {
 		templateUrl: "room/room.html",
 		controller: "RoomController"
 	})
+	.when("/roomlist", {
+		templateUrl: "src/roomlist/roomlist.html",
+		controller: "RoomListController"
+	})
 	.otherwise ({
 		redirectTo: "/login"
 	});
