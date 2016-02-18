@@ -1,0 +1,16 @@
+<div>
+	<div>
+		<button ng-click="partRoom()">Leave Room</button>
+	</div>
+	<div>
+	<ul>
+		<li ng-repeat="message in messages">
+			[{{message.timestamp}}] | {{message.nick}}: {{message.message}}
+		</li>
+	</ul>
+	</div>
+	<div>
+		<input type="textarea" ng-model="message" />
+		<button ng-click="sendMessage()">Send</button>
+	</div>
+</div>

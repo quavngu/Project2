@@ -1,12 +1,15 @@
 <div>
 	<span>roomlist yo</span>
 	<div>
+		<input type="text" ng-model="roomname"/>
 		<button ng-click="createRoom()">Create Room</button>
 	</div>
-	<ul>
-		<li ng-repeat="room in roomlist">
-			<a ng-href="#/rooms/{{room.id}}">{{room.name}}</a>
-		</li>
-	</ul>
+	<div>
+		<ul>
+			<li ng-repeat="roomname in roomnames">
+				<a ng-href="#/room/{{roomname}}">{{roomname}}</a>
+			</li>
+		</ul>
+	</div>
 	{{errorMessage}}
 </div>

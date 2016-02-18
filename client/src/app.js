@@ -2,12 +2,16 @@
 
 angular.module("chatApp", ["ngRoute"]).config(function($routeProvider) {
 	$routeProvider
+	.when("/", {
+		templateUrl: "src/login/login.html",
+		controller: "LoginController"
+	})
 	.when("/login", {
 		templateUrl: "src/login/login.html",
 		controller: "LoginController"
 	})
 	.when("/room/:id", {
-		templateUrl: "room/room.html",
+		templateUrl: "src/room/room.html",
 		controller: "RoomController"
 	})
 	.when("/roomlist", {
@@ -15,6 +19,6 @@ angular.module("chatApp", ["ngRoute"]).config(function($routeProvider) {
 		controller: "RoomListController"
 	})
 	.otherwise ({
-		redirectTo: "/login"
+		templateUrl: "src/utilities/notfound.html"
 	});
 });
