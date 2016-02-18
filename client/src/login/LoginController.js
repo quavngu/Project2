@@ -6,7 +6,7 @@ function LoginController($scope, $http, ChatResource, socket) {
 	$scope.errorMessage = "";
 
 	$scope.onLogin = function onLogin() {
-		ChatResource.login($scope.user, function(success) {
+		ChatResource.login($scope.user, socket, function(success) {
 		if(!success) {
 			$scope.errorMessage = "Login failed";
 		}
