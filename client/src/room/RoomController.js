@@ -6,6 +6,7 @@ function RoomController($scope, socket, $location, $routeParams) {
 	$scope.users = []
 	$scope.messages = [];
 	$scope.ops = [];
+	$scope.username = "";
 	socket.emit("rooms");
 	var roomobj = {room: $scope.id, pass: undefined};
 	socket.emit("joinroom", roomobj, function(accepted, reason) {
@@ -32,9 +33,16 @@ function RoomController($scope, socket, $location, $routeParams) {
 		if (message === "join") {
 			console.log("hey there");
 			$scope.id = $routeParams.id;
+			if ($scope.username === "") {
+				$scope.username = username;
+			}
 		} else {
 			console.log("left room");
-			$location.path("/roomlist");
+			console.log($scope.username);
+			if (username === $scope.username)
+			{
+				$location.path("/roomlist");
+			}
 		}
 	};
 
