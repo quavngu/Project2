@@ -5,7 +5,7 @@ function RoomController($scope, socket, $location, $routeParams) {
 	var id = $routeParams.id;
 	console.log(id);
 	$scope.room = id;
-	$scope.messages = {};
+	$scope.messages = [];
 	$scope.user = "";
 	$scope.users = {};
 	$scope.ops = {};
@@ -23,7 +23,11 @@ function RoomController($scope, socket, $location, $routeParams) {
 			$scope.users = room.users;
 			$scope.ops = room.ops;
 			$scope.topic = room.topic;
-			console.log($scope.messages);
+
+			for(m in room.messages) {
+				console.log(m);
+			}
+			//console.log($scope.messages);
 		} else {
 			console.log("left room");
 			$location.path("/roomlist");
@@ -39,7 +43,7 @@ function RoomController($scope, socket, $location, $routeParams) {
 
 	$scope.sendMessage = function sendMessage() {
 		var data = {'roomName': id, 'msg': $scope.message};
-		console.log(data.roomName + " " + data.message);
+		console.log(data.roomName + " " + data.msg);
 		socket.emit("sendmsg", data);
 	};
 
