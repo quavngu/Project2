@@ -1,6 +1,7 @@
 <div>
 	<div>
 		<h1> Welcome to {{id}} </h1>
+		<h1> {{bannedMessage}}
 		<h3>{{room.topic}}</h3>
 		<button ng-click="partRoom()">Leave Room</button>
 	</div>
@@ -14,19 +15,21 @@
 			</li>
 		</ul>
 	</div>
+
 	<div>
 		OPs: 
 		<ul>
 			<li ng-repeat="op in ops">
-				{{op}}
+				{{op}} 
 			</li>
 		</ul>
-		Users: 
+		Users:
 		<ul>
 			<li ng-repeat="user in users">
-				{{user}}
+				{{user}}<button ng-click="kickUser(user)" ng-model="selectedUser">kick</button><button ng-click="banUser(user)" ng-model="selectedUser">ban</button>
 			</li>
 		</ul>
+		{{errorMessage}}
 	</div>
 	<div>
 		<input type="textarea" ng-model="message" />
