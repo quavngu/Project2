@@ -44,7 +44,6 @@ io.sockets.on('connection', function (socket) {
 		//If the room does not exist
 		if(rooms[room] === undefined) {
 			rooms[room] = new Room();
-			rooms[room].name = room;
 			//Op the user if he creates the room.
 			rooms[room].ops[socket.username] = socket.username;
 			//If the user wants to password protect the room we set the password.
@@ -310,7 +309,6 @@ function Room() {
 	this.topic = "No topic has been set for room..",
 	this.locked = false,
 	this.password = "",
-	this.name = "";
 
 	this.addUser = function(user) {
 		(user !== undefined) ? this.users[user] = user : console.log("ERROR: add user");

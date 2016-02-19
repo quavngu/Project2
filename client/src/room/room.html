@@ -1,13 +1,32 @@
 <div>
 	<div>
+		<h1> Welcome to {{id}} </h1>
+		<h3>{{room.topic}}</h3>
 		<button ng-click="partRoom()">Leave Room</button>
 	</div>
 	<div>
-	<ul>
-		<li ng-repeat="message in messages">
-			[{{message.timestamp}}] | {{message.nick}}: {{message.message}}
-		</li>
-	</ul>
+		<ul>
+			<li ng-repeat="message in messages">
+				{{message.nick}} at {{message.date}} :
+				<div>
+					{{message.message}}
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div>
+		OPs: 
+		<ul>
+			<li ng-repeat="op in ops">
+				{{user}}
+			</li>
+		</ul>
+		Users: 
+		<ul>
+			<li ng-repeat="user in users">
+				{{user}}
+			</li>
+		</ul>
 	</div>
 	<div>
 		<input type="textarea" ng-model="message" />
