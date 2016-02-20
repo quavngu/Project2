@@ -54,6 +54,7 @@ body {
 
 .msgHistory {
 	border-style: solid;
+	border-color: #d3d3d3;
     border-width: 1px;
     margin-bottom: 10px;
 }
