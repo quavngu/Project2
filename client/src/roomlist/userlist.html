@@ -1,0 +1,12 @@
+<div>
+	<p>HEHEEHEHE</p>
+	<button ng-click="cRoom()">Create Room</button>
+	<div>
+		<ul>
+			<li ng-repeat="user in usernames">
+				<a ng-href="#/private/{{user}}">{{user}}</a>
+			</li>
+		</ul>
+	</div>
+	{{errorMessage}}
+</div>
