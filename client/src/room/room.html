@@ -1,38 +1,50 @@
 <div>
-	<div>
-		<h1> Welcome to {{id}} </h1>
-		<h1> {{bannedMessage}}
-		<h3>{{room.topic}}</h3>
-		<button ng-click="partRoom()">Leave Room</button>
-	</div>
-	<div>
-		<ul>
-			<li ng-repeat="message in messages">
-				{{message.nick}} at {{message.date}} :
-				<div>
-					{{message.message}}
-				</div>
-			</li>
-		</ul>
-	</div>
+	<div class="roomWrapper">
 
-	<div>
-		OPs: 
-		<ul>
-			<li ng-repeat="op in ops">
-				{{op}} 
-			</li>
-		</ul>
-		Users:
-		<ul>
-			<li ng-repeat="user in users">
-				{{user}}<button ng-click="kickUser(user)" ng-model="selectedUser">kick</button><button ng-click="banUser(user)" ng-model="selectedUser">ban</button>
-			</li>
-		</ul>
-		{{errorMessage}}
-	</div>
-	<div>
-		<input type="textarea" ng-model="message" />
-		<button ng-click="sendMessage()">Send</button>
+
+		<div class="roomLHS">
+			<h1> Welcome to {{id}} </h1>
+			<h1> {{bannedMessage}} </h1>
+			<h3>{{room.topic}}</h3>
+		</div>
+
+		<div class="roomMain">
+			<div class="msgHistory">
+				<ul class="theChat">
+					<li ng-repeat="message in messages">
+						{{message.nick}} at {{message.date}} :
+						<div>
+							{{message.message}}
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="msgSendBox">
+				<input class="msgTextarea" type="textarea" ng-model="message" />
+				<button ng-click="sendMessage()">Send</button>
+			</div>
+		</div>
+
+		<div class ="roomRHS">
+			<button ng-click="partRoom()">Leave Room</button>
+			<p></p>
+			<div>
+				OPs: 
+				<ul>
+					<li ng-repeat="op in ops">
+						{{op}} 
+					</li>
+				</ul>
+				Users:
+				<ul>
+					<li ng-repeat="user in users">
+						{{user}}<button ng-click="kickUser(user)" ng-model="selectedUser">kick</button>
+						<button ng-click="banUser(user)" ng-model="selectedUser">ban</button>
+					</li>
+				</ul>
+				{{errorMessage}}
+			</div>
+		</div>
+
 	</div>
 </div>
