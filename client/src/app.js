@@ -22,6 +22,10 @@ angular.module("chatApp", ["ngRoute"]).config(function($routeProvider) {
 		templateUrl: "src/userlist/userlist.html",
 		controller: "UserListController"
 	})
+	.when("/private/:user", {
+		templateUrl: "src/chat/chat.html",
+		controller: "ChatController"
+	})
 	.otherwise ({
 		templateUrl: "src/utilities/notfound.html"
 	});
