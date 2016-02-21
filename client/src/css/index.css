@@ -20,8 +20,12 @@ ul {
 	padding: 0;
 }
 
+a {
+	color: white;
+}
+
 /* ==================== CSS for login.html ====================*/
-.loginheader, .username, .errorlogin {
+.loginheader, .errorlogin {
 	color: white;
 }
 
@@ -29,6 +33,15 @@ ul {
 	text-align: center;
 	margin: 0 auto;
 	width: 1200px;
+}
+
+.usernameBox {
+	text-align: center;
+	width: 550px;
+	height: 30px;
+	font-size: 18px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 /* ==================== CSS for roomlist.html ====================*/
@@ -47,6 +60,7 @@ ul {
 }
 
 .createRoomBox {
+	text-align: center;
 	width: 550px;
 	height: 30px;
 	font-size: 18px;
@@ -81,6 +95,7 @@ ul {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	background-color: white;
+	height: 510px;
 
 	/*border-style: solid;
     border-width: 1px;*/
@@ -100,6 +115,10 @@ ul {
     border-width: 1px;*/
 }
 
+.banned {
+	color: red;
+}
+
 .userSays {
     font-weight: bold;
 }
@@ -112,10 +131,17 @@ ul {
     word-wrap: break-word;
     padding-left: 25px;
     padding-right: 25px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 480px;
 }
 
 .msgTextarea {
-	width: 89%;
+	width: 85%;
+	height: 30px;
+	font-size: 18px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .uwrapper {
@@ -132,3 +158,5 @@ ul {
 	width: 40%;
 	float: left;
 }
+
+/* ==================== CSS for userlist.html ====================*/

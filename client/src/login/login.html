@@ -1,9 +1,10 @@
 <div class="loginDIV" ng-controller="LoginController">
 	<div class="row">
 		<h2 class="loginheader">Sign into the cloud, let the cloud consume you</h2>
-		<label class="username">Username:</label>
-		<input type="text" ng-model="user">
-		<button ng-click="onLogin()">Join The Cloud</button>
+		<input type="text" class="usernameBox" ng-model="user" placeholder="Enter Username">
+		<div>
+			<button ng-click="onLogin()">Join The Cloud</button>
+		</div>
 	</div>
 	<div>
 		<span class="errorlogin">{{errorMessage}}</span>
