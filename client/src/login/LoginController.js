@@ -1,7 +1,7 @@
 "use strict";
 
-angular.module("chatApp").controller("LoginController", ["$scope", "$location", "$http", "ChatResource", "socket",
-function LoginController($scope, $location, $http, ChatResource, socket) {
+angular.module("chatApp").controller("LoginController", ["$scope", "$location", "$http", "socket",
+function LoginController($scope, $location, $http, socket) {
 	$scope.user = "";
 	$scope.errorMessage = "";
 

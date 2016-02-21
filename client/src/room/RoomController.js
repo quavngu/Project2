@@ -23,18 +23,10 @@ function RoomController($scope, socket, $location, $routeParams) {
 	var getRoom = function(rooms) {
 		console.log("getting room");
 		$scope.room = rooms[$scope.id];
-		console.log("printing messages");
-		/*for(var m in $scope.room.messageHistory) {
-			console.log($scope.room.messageHistory[m]);
-			messages.push({'date': $scope.room.messageHistory[m].timestamp, 'nick': $scope.room.messageHistory[m].nick, 'message': $scope.room.messageHistory[m].message});
-			console.log(messages[m]);
-		}*/
 	};
 	
 	var enterOrLeave = function(message, room, username) {
-		console.log("EEEEEE" + message);
 		if (message === "join") {
-			console.log("hey there");
 			$scope.id = $routeParams.id;
 			if ($scope.username === "") {
 				$scope.username = username;
@@ -69,7 +61,7 @@ function RoomController($scope, socket, $location, $routeParams) {
 
 	var getKicked = function(room, user, username) {
 		if (room === $scope.id && user === $scope.username) {
-			console.log(username + " has kicked u mafagga");
+			console.log(username + " has kicked you");
 			$location.path("/roomlist");
 		}
 	};
@@ -78,7 +70,7 @@ function RoomController($scope, socket, $location, $routeParams) {
 		if (room === $scope.id) {
 			$scope.room.topic = topic;
 		}
-	}
+	};
 
 	$scope.editTopic = function editTopic() {
 		var topicObj = {'room': $scope.id, 'topic': $scope.roomtopic};
@@ -87,10 +79,10 @@ function RoomController($scope, socket, $location, $routeParams) {
 				if (accepted) {
 					console.log("topic changed");
 				}
-			})
+			});
 			$scope.roomtopic = "";
 		}
-	}
+	};
 
 	$scope.partRoom = function partRoom() {
 		console.log("room peing parted");
@@ -139,8 +131,4 @@ function RoomController($scope, socket, $location, $routeParams) {
 	socket.on('kicked', getKicked);
 
 	socket.on('banned', getKicked);
-
-
-	//socket.on('updateusers', room, rooms[room].users, rooms[room].ops);
-	
 }]);

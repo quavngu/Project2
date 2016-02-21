@@ -6,7 +6,6 @@ function ChatController($scope, socket, $location, $routeParams) {
 	$scope.messages = [];
 	$scope.username = "";
 	$scope.errorMessage = "";
-	
 
 	var updateChat = function(username, message) {
 		if (username === $scope.otherUser) {

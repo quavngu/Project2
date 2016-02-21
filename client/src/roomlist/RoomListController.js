@@ -8,7 +8,6 @@ function RoomListController($scope, socket, $location) {
 	$scope.privateMessages = [];
 
 	$scope.createRoom = function createRoom() {
-		console.log("create room");
 		var roomobj = {room: $scope.roomname, pass: undefined};
 		if($scope.roomname !== undefined) {
 			socket.emit("joinroom", roomobj, function(accepted, reason) {
@@ -25,12 +24,8 @@ function RoomListController($scope, socket, $location) {
 	};
 
 	var funcToBeCalledWhenRommlistChanges = function(roomlist) {
-		console.log("herro");
-		console.log(roomlist);
-		//$scope.apply(function() {
 		$scope.roomlist = roomlist;
 		$scope.roomnames = Object.keys(roomlist);
-		//});
 	};
 
 	socket.on("roomlist", funcToBeCalledWhenRommlistChanges);
