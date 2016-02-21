@@ -1,0 +1,32 @@
+<div>
+	<div class="roomWrapper">
+
+
+		<div class="roomLHS">
+			<h3> Private what with {{otherUser}} </h3>
+		</div>
+
+		<div class="roomMain">
+			<div class="msgHistory">
+				<ul class="theChat">
+					<li ng-repeat="message in messages">
+						{{message.nick}} at {{message.date}} :
+						<div>
+							{{message.message}}
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="msgSendBox">
+				<input class="msgTextarea" type="textarea" ng-model="message" />
+				<button ng-click="sendMessage()">Send</button>
+				{{errorMessage}}
+			</div>
+		</div>
+
+		<div class ="roomRHS">
+			<button ng-click="partRoom()">Leave Room</button>
+		</div>
+
+	</div>
+</div>
