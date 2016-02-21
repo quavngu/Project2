@@ -9,7 +9,6 @@ function RoomController($scope, socket, $location, $routeParams) {
 	$scope.username = "";
 	$scope.selectedUser = "";
 	$scope.bannedMessage = "";
-	$scope.privateMessages = [];
 	socket.emit("rooms");
 	var roomobj = {room: $scope.id, pass: undefined};
 	socket.emit("joinroom", roomobj, function(accepted, reason) {
@@ -75,19 +74,9 @@ function RoomController($scope, socket, $location, $routeParams) {
 		}
 	}
 
-	var getPrvtMsg = function(username, message) {
-		console.log("incoming private message");
-		$scope.privateMessages.push({'nick': username, 'message': message});
-	};
-
 	$scope.partRoom = function partRoom() {
 		console.log("room peing parted");
 		socket.emit("partroom", $scope.id);
-	};
-
-	$scope.answerUser = function answrUser(user) {
-		var path = "/private/" + user;
-		$location.path(path);
 	};
 
 	$scope.sendMessage = function sendMessage() {
@@ -128,7 +117,6 @@ function RoomController($scope, socket, $location, $routeParams) {
 
 	socket.on('banned', getKicked);
 
-	socket.on('recv_privatemsg', getPrvtMsg);
 
 	//socket.on('updateusers', room, rooms[room].users, rooms[room].ops);
 	

@@ -22,11 +22,6 @@ function RoomListController($scope, socket, $location) {
 		});
 	}
 
-	$scope.answerUser = function answrUser(user) {
-		var path = "/private/" + user;
-		$location.path(path);
-	};
-
 	var funcToBeCalledWhenRommlistChanges = function(roomlist) {
 		console.log("herro");
 		console.log(roomlist);
@@ -35,11 +30,7 @@ function RoomListController($scope, socket, $location) {
 		$scope.roomnames = Object.keys(roomlist);
 		//});
 	}
-	var getPrvtMsg = function(username, message) {
-		$scope.privateMessages.push({'nick': username, 'message': message});
-	};
 
 	socket.on("roomlist", funcToBeCalledWhenRommlistChanges);
 
-	socket.on('recv_privatemsg', getPrvtMsg);
 }]);

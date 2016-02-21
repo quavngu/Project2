@@ -6,8 +6,7 @@ function UserListController($scope, socket, $location, $routeParams) {
 	socket.emit("users");
 	$scope.users = {};
 	$scope.usernames = [];
-	$scope.errorMessage = "þetta sokkar";
-	$scope.privateMessages = [];
+	$scope.errorMessage = "";
 
 	$scope.createRoom = function cRoom() {
 		console.log("create room");
@@ -24,11 +23,6 @@ function UserListController($scope, socket, $location, $routeParams) {
 		$scope.users = userlist;
 		$scope.usernames = Object.keys(userlist);
 	}
-	var getPrvtMsg = function(username, message) {
-		$scope.privateMessages.push({'nick': username, 'message': message});
-	};
 
 	socket.on("userlist", getUserList);
-
-	socket.on('recv_privatemsg', getPrvtMsg);
 }]);

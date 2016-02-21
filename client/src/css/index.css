@@ -24,6 +24,22 @@ a {
 	color: white;
 }
 
+/* ==================== CSS for private chat in index.html ====================*/
+
+.privateChatDIV {
+	margin-bottom: 10px;
+	position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20%;
+}
+
+.privatePoppUpMessage {
+	background-color: white;
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
 /* ==================== CSS for login.html ====================*/
 .loginheader, .errorlogin {
 	color: white;
@@ -48,7 +64,7 @@ a {
 .roomlistDIV {
 	text-align: center;
 	margin: 0 auto;
-	width: 1200px;
+	width: 50%;
 }
 
 .roomlistUL {

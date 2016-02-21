@@ -19,6 +19,22 @@
         </ul>
 
     	<div ng-view></div>
+        <div ng-controller="PoppUpChatController">
+            <div class="privateChatDIV">
+                <ul>
+                    <li ng-repeat="privateMessage in privateMessages">
+                        <div class="privatePoppUpMessage">
+                            <span>Incoming message from: {{privateMessage.nick}}</span>
+                             - {{privateMessage.message}}
+                             <span>
+                                <button ng-click="answerUser(privateMessage.nick)">answer</button>
+                                <button ng-click="ignoreMessage()">ignore</button>
+                             </span>
+                         </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
         <script src="http://localhost:8080/socket.io/socket.io.js"></script>
         
@@ -34,5 +50,6 @@
         <script src="/src/roomlist/RoomListController.js"></script>
         <script src="/src/userlist/UserListController.js"></script>
         <script src="/src/chat/ChatController.js"></script>
+        <script src="/src/poppupchat/PoppUpChatController.js"></script>
     </body>
 </html>
