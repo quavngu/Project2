@@ -3,7 +3,7 @@
 angular.module("chatApp").controller("RoomController", ["$scope", "socket", "$location", "$routeParams",
 function RoomController($scope, socket, $location, $routeParams) {
 	$scope.id = $routeParams.id;
-	$scope.users = []
+	$scope.users = [];
 	$scope.messages = [];
 	$scope.ops = [];
 	$scope.username = "";
@@ -72,7 +72,7 @@ function RoomController($scope, socket, $location, $routeParams) {
 			console.log(username + " has kicked u mafagga");
 			$location.path("/roomlist");
 		}
-	}
+	};
 
 	$scope.partRoom = function partRoom() {
 		console.log("room peing parted");
@@ -80,9 +80,12 @@ function RoomController($scope, socket, $location, $routeParams) {
 	};
 
 	$scope.sendMessage = function sendMessage() {
-		var data = {'roomName': $scope.id, 'msg': $scope.message};
-		console.log(data.roomName + " " + data.msg);
-		socket.emit("sendmsg", data);
+		if($scope.message !== "") {
+			var data = {'roomName': $scope.id, 'msg': $scope.message};
+			console.log(data.roomName + " " + data.msg);
+			$scope.message = "";
+			socket.emit("sendmsg", data);
+		}	
 	};
 
 	$scope.kickUser = function kickUser(selectedUser) {
@@ -92,8 +95,8 @@ function RoomController($scope, socket, $location, $routeParams) {
 			if (!success) {
 				$scope.errorMessage = "Could not kick";
 			}
-		})
-	}
+		});
+	};
 
 	$scope.banUser = function banUser(selectedUser) {
 		var banObj = {'room': $scope.id, 'user': selectedUser};
@@ -102,8 +105,8 @@ function RoomController($scope, socket, $location, $routeParams) {
 			if (!success) {
 				$scope.errorMessage = "Could not ban";
 			}
-		})
-	}
+		});
+	};
 
 	socket.on('updatechat', updateChat);
 

@@ -26,5 +26,6 @@ module.exports = function ( grunt ) {
      }
    }
  };
- build: ['Gruntfile.js', '**/*.js'];
-}
+ grunt.initConfig(taskConfig);
+ grunt.registerTask('default', ['jshint']);
+};

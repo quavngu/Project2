@@ -11,7 +11,7 @@ function UserListController($scope, socket, $location, $routeParams) {
 	$scope.createRoom = function cRoom() {
 		console.log("create room");
 		
-	}
+	};
 
 	$scope.answerUser = function answrUser(user) {
 		var path = "/private/" + user;
@@ -22,7 +22,7 @@ function UserListController($scope, socket, $location, $routeParams) {
 		console.log("ég hata gretu salome");
 		$scope.users = userlist;
 		$scope.usernames = Object.keys(userlist);
-	}
+	};
 
 	socket.on("userlist", getUserList);
 }]);

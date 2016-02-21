@@ -20,7 +20,7 @@ function RoomListController($scope, socket, $location) {
 				$location.path(path);
 			}
 		});
-	}
+	};
 
 	var funcToBeCalledWhenRommlistChanges = function(roomlist) {
 		console.log("herro");
@@ -29,7 +29,7 @@ function RoomListController($scope, socket, $location) {
 		$scope.roomlist = roomlist;
 		$scope.roomnames = Object.keys(roomlist);
 		//});
-	}
+	};
 
 	socket.on("roomlist", funcToBeCalledWhenRommlistChanges);
 

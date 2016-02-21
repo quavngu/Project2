@@ -19,18 +19,22 @@ function ChatController($scope, socket, $location, $routeParams) {
 	};
 
 	$scope.sendMessage = function sendMessage() {
-		var msgObj = {'nick': $scope.otherUser, 'message': $scope.message}
-		socket.emit('privatemsg', msgObj, function(accepted) {
-			if (!accepted) {
-				$scope.errorMessage = "Could not send message";
-			}
-			else {
-				var meString = "Me";
-				$scope.messages.push({'nick': meString, 'message': msgObj.message});
-				$scope.errorMessage = "";	
-			}
+		var msgObj = {'nick': $scope.otherUser, 'message': $scope.message};
+		if($scope.message !== "") {
+			socket.emit('privatemsg', msgObj, function(accepted) {
+				if (!accepted) {
+					$scope.errorMessage = "Could not send message";
+				}
+				else {
+					var meString = "Me";
+					$scope.messages.push({'nick': meString, 'message': msgObj.message});
+					$scope.errorMessage = "";
+				}
+				$scope.message = "";
+			});
 		}
-	)};
+		
+	};
 
 	socket.on('recv_privatemsg', updateChat);
 }]);

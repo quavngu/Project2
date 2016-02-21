@@ -8,7 +8,7 @@ function PoppUpChatController($scope, socket, $location, $routeParams) {
 	};
 
 	var getPrvtMsg = function(username, message) {
-		$scope.privateMessages.push({'nick': username, 'message': message})
+		$scope.privateMessages.push({'nick': username, 'message': message});
 		if ($scope.privateMessages.length > 5) {
 			console.log("hahah");
 			$scope.privateMessages.splice(0,1);
