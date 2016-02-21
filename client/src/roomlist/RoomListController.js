@@ -10,16 +10,18 @@ function RoomListController($scope, socket, $location) {
 	$scope.createRoom = function createRoom() {
 		console.log("create room");
 		var roomobj = {room: $scope.roomname, pass: undefined};
-		socket.emit("joinroom", roomobj, function(accepted, reason) {
-			if (!accepted) {
-				$scope.errorMessage = reason;
-			}
-			else {
-				console.log("room created");
-				var path = "room/" + $scope.roomname;
-				$location.path(path);
-			}
-		});
+		if($scope.roomname !== undefined) {
+			socket.emit("joinroom", roomobj, function(accepted, reason) {
+				if (!accepted) {
+					$scope.errorMessage = reason;
+				}
+				else {
+					console.log("room created");
+					var path = "room/" + $scope.roomname;
+					$location.path(path);
+				}
+			});
+		}
 	};
 
 	var funcToBeCalledWhenRommlistChanges = function(roomlist) {

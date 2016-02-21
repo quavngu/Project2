@@ -28,7 +28,7 @@ a, .whiteColor {
 	font-weight: bold;
 }
 
-/* ==================== CSS for private chat in index.html ====================*/
+/* ==================== CSS for userlist.html ====================*/
 .userListDIV {
 	text-align: center;
 	margin: 0 auto;
@@ -37,6 +37,7 @@ a, .whiteColor {
 
 /* ==================== CSS for private chat in index.html ====================*/
 .privateChatDIV {
+	word-wrap: break-word;
 	margin-bottom: 10px;
 	position: absolute;
     bottom: 0;

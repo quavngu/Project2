@@ -82,11 +82,14 @@ function RoomController($scope, socket, $location, $routeParams) {
 
 	$scope.editTopic = function editTopic() {
 		var topicObj = {'room': $scope.id, 'topic': $scope.roomtopic};
-		socket.emit('settopic', topicObj, function(accepted) {
-			if (accepted) {
-				console.log("topic changed");
-			}
-		})
+		if($scope.roomtopic !== "" && $scope.roomtopic !== "No topic has been set for room..") {
+			socket.emit('settopic', topicObj, function(accepted) {
+				if (accepted) {
+					console.log("topic changed");
+				}
+			})
+			$scope.roomtopic = "";
+		}
 	}
 
 	$scope.partRoom = function partRoom() {
