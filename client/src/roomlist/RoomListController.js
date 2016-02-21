@@ -5,6 +5,7 @@ function RoomListController($scope, socket, $location) {
 	socket.emit("rooms");
 	$scope.roomlist = {};
 	$scope.roomnames = [];
+	$scope.privateMessages = [];
 
 	$scope.createRoom = function createRoom() {
 		console.log("create room");
@@ -21,6 +22,11 @@ function RoomListController($scope, socket, $location) {
 		});
 	}
 
+	$scope.answerUser = function answrUser(user) {
+		var path = "/private/" + user;
+		$location.path(path);
+	};
+
 	var funcToBeCalledWhenRommlistChanges = function(roomlist) {
 		console.log("herro");
 		console.log(roomlist);
@@ -29,10 +35,11 @@ function RoomListController($scope, socket, $location) {
 		$scope.roomnames = Object.keys(roomlist);
 		//});
 	}
-
-	/*socket.on("roomlist", rooms, function() {
-		$scope.roomlist = rooms;
-	});*/
+	var getPrvtMsg = function(username, message) {
+		$scope.privateMessages.push({'nick': username, 'message': message});
+	};
 
 	socket.on("roomlist", funcToBeCalledWhenRommlistChanges);
+
+	socket.on('recv_privatemsg', getPrvtMsg);
 }]);

@@ -12,4 +12,13 @@
 			</li>
 		</ul>
 	</div>
+	<div>
+		<ul>
+			<li ng-repeat="privateMessage in privateMessages">
+				<span>Incoming message from: {{privateMessage.nick}}</span>
+				 - {{privateMessage.message}}
+				 <button ng-click="answerUser(privateMessage.nick)">answer</button>
+			</li>
+		</ul>
+	</div>
 </div>
