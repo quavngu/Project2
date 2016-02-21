@@ -12,10 +12,7 @@
 			<div class="msgHistory">
 				<ul class="theChat">
 					<li ng-repeat="message in messages">
-						{{message.nick}} at {{message.date}} :
-						<div>
-							{{message.message}}
-						</div>
+						<span class="userSays">{{message.nick}}</span>: {{message.message}}
 					</li>
 				</ul>
 			</div>
@@ -38,8 +35,15 @@
 				Users:
 				<ul>
 					<li ng-repeat="user in users">
-						{{user}}<button ng-click="kickUser(user)" ng-model="selectedUser">kick</button>
-						<button ng-click="banUser(user)" ng-model="selectedUser">ban</button>
+						<div class="uwrapper">
+							<div class="ulhs">
+								{{user}}
+							</div>
+							<div class="urhs">
+								<button ng-click="kickUser(user)" ng-model="selectedUser">kick</button>
+								<button ng-click="banUser(user)" ng-model="selectedUser">ban</button>
+							</div>
+						</div>
 					</li>
 				</ul>
 				{{errorMessage}}

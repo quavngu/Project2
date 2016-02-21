@@ -1,12 +1,60 @@
 * {
 	font-family: arial;
+	color: rgb(6, 182, 255);
 }
 
 body {
-	background-color: #e9e9e9;
+	background: url("http://images.clipartpanda.com/blue-clouds-background-blue-cloud-background-blue2-19029417-1920-9861.jpg") repeat fixed;
+	background-size: 170%;
+	
+	/*background-color: #e9e9e9;*/
 }
 
-/* CSS for room.html*/
+h1 {
+	color: white;
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+/* ==================== CSS for login.html ====================*/
+.loginheader, .username, .errorlogin {
+	color: white;
+}
+
+.loginDIV {
+	text-align: center;
+	margin: 0 auto;
+	width: 1200px;
+}
+
+/* ==================== CSS for roomlist.html ====================*/
+.roomlistDIV {
+	text-align: center;
+	margin: 0 auto;
+	width: 1200px;
+}
+
+.roomlistUL {
+	padding: 0;
+}
+
+.roomlistNames {
+	color: white;
+}
+
+.createRoomBox {
+	width: 550px;
+	height: 30px;
+	font-size: 18px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/* ==================== CSS for room.html ====================*/
 .roomWrapper {
 	width: 1200px;
 	margin: 0 auto;
@@ -52,17 +100,35 @@ body {
     border-width: 1px;*/
 }
 
+.userSays {
+    font-weight: bold;
+}
+
 .msgHistory {
 	border-style: solid;
 	border-color: #d3d3d3;
     border-width: 1px;
     margin-bottom: 10px;
-}
-
-.msgSendBox {
-
+    word-wrap: break-word;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .msgTextarea {
 	width: 89%;
+}
+
+.uwrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.ulhs {
+	width: 60%;
+	float: left;
+}
+
+.urhs {
+	width: 40%;
+	float: left;
 }
