@@ -1,6 +1,11 @@
-<div>
-	<button ng-click="cRoom()">Create Room</button>
+<div class="userListDIV">
+	<div class="locationLink">
+		<a href="#/roomlist">Public Chat</a>
+	</div>
 	<div>
+		<div>
+			<span class="whiteColor">Currently available users:</span>
+		</div>
 		<ul class="privateList">
 			<li ng-repeat="user in users">
 				<a ng-href="#/private/{{user}}">{{user}}</a>

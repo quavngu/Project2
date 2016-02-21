@@ -20,12 +20,22 @@ ul {
 	padding: 0;
 }
 
-a {
+a, .whiteColor {
 	color: white;
 }
 
-/* ==================== CSS for private chat in index.html ====================*/
+.toBold {
+	font-weight: bold;
+}
 
+/* ==================== CSS for private chat in index.html ====================*/
+.userListDIV {
+	text-align: center;
+	margin: 0 auto;
+	width: 50%;
+}
+
+/* ==================== CSS for private chat in index.html ====================*/
 .privateChatDIV {
 	margin-bottom: 10px;
 	position: absolute;
@@ -83,6 +93,10 @@ a {
 	font-size: 18px;
 	padding-left: 20px;
 	padding-right: 20px;
+}
+
+.locationLink {
+	padding-bottom: 20px;
 }
 
 /* ==================== CSS for room.html ====================*/

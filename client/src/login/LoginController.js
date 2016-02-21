@@ -11,7 +11,7 @@ function LoginController($scope, $location, $http, ChatResource, socket) {
        			console.log($scope.user + " is available");
        			$location.path("/roomlist");
     		} else {
-    			$scope.errorMessage = $scope.user + " has been taken";
+    			$scope.errorMessage = "Please try another username";
     		}
 		});
 	};
