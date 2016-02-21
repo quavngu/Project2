@@ -3,17 +3,14 @@
 
 
 		<div class="roomLHS">
-			<h3> Private what with {{otherUser}} </h3>
+			<h3> Private chat with {{otherUser}} </h3>
 		</div>
 
 		<div class="roomMain">
 			<div class="msgHistory">
 				<ul class="theChat">
 					<li ng-repeat="message in messages">
-						{{message.nick}} at {{message.date}} :
-						<div>
-							{{message.message}}
-						</div>
+						<span class="userSays">{{message.nick}}</span>: {{message.message}}
 					</li>
 				</ul>
 			</div>

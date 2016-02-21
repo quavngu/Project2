@@ -24,12 +24,11 @@
                 <ul>
                     <li ng-repeat="privateMessage in privateMessages">
                         <div class="privatePoppUpMessage">
-                            <span>Incoming message from: {{privateMessage.nick}}</span>
-                             - {{privateMessage.message}}
-                             <span>
-                                <button ng-click="answerUser(privateMessage.nick)">answer</button>
-                                <button ng-click="ignoreMessage()">ignore</button>
-                             </span>
+                            <div>You have new private message!</div>
+                            <div><span class="userSays">{{privateMessage.nick}}</span>: {{privateMessage.message}}</div>
+                            <span>
+                               <button ng-click="answerUser(privateMessage.nick)">Chat</button>
+                            </span>
                          </div>
                     </li>
                 </ul>
