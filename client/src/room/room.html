@@ -6,6 +6,8 @@
 			<h3> Welcome to {{id}} </h3>
 			<h3 class="banned"> {{bannedMessage}} </h3>
 			<h4>{{room.topic}}</h4>
+			<input class="topicBox" type="text" ng-model="roomtopic"/>
+			<button ng-click="editTopic()">Edit topic</button>
 		</div>
 
 		<div class="roomMain">

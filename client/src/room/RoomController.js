@@ -74,6 +74,21 @@ function RoomController($scope, socket, $location, $routeParams) {
 		}
 	};
 
+	var setNewTopic = function(room, topic, username) {
+		if (room === $scope.id) {
+			$scope.room.topic = topic;
+		}
+	}
+
+	$scope.editTopic = function editTopic() {
+		var topicObj = {'room': $scope.id, 'topic': $scope.roomtopic};
+		socket.emit('settopic', topicObj, function(accepted) {
+			if (accepted) {
+				console.log("topic changed");
+			}
+		})
+	}
+
 	$scope.partRoom = function partRoom() {
 		console.log("room peing parted");
 		socket.emit("partroom", $scope.id);
@@ -107,6 +122,8 @@ function RoomController($scope, socket, $location, $routeParams) {
 			}
 		});
 	};
+
+	socket.on('updatetopic', setNewTopic);
 
 	socket.on('updatechat', updateChat);
 
