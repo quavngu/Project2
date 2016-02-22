@@ -6,14 +6,14 @@
         <title>Chat</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="src/css/index.css">
+        <link rel="stylesheet" type="text/css" href="dest/concat.min.css">
     </head>
     <body>
         <div class="headerTitle">
             <h1>Cloud Messenger</h1>
         </div>
 
-    	<div ng-view></div>
+        <div ng-view></div>
         <div ng-controller="PoppUpChatController">
             <div class="privateChatDIV">
                 <ul>
@@ -29,19 +29,11 @@
                 </ul>
             </div>
         </div>
-
         <script src="http://localhost:8080/socket.io/socket.io.js"></script>
         <script src="/node_modules/angular/angular.min.js"></script>
-    	<script src="/node_modules/jquery/dist/jquery.js"></script>
-    	<script src="/node_modules/angular-bootstrap-npm/dist/angular-bootstrap.js"></script>
+        <script src="/node_modules/jquery/dist/jquery.js"></script>
+        <script src="/node_modules/angular-bootstrap-npm/dist/angular-bootstrap.js"></script>
         <script src="/node_modules/angular-route/angular-route.js"></script>
-    	<script src="/src/app.js"></script>
-        <script src="/src/resource/Socket.js"></script>
-        <script src="/src/login/LoginController.js"></script>
-        <script src="/src/room/RoomController.js"></script>
-        <script src="/src/chat/ChatController.js"></script>
-        <script src="/src/roomlist/RoomListController.js"></script>
-        <script src="/src/userlist/UserListController.js"></script>
-        <script src="/src/poppupchat/PoppUpChatController.js"></script>
+        <script src="dest/concat.js"></script>
     </body>
 </html>

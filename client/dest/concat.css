@@ -4,7 +4,7 @@
 }
 
 body {
-	background: url("../img/clouds.png") repeat fixed;
+	background: url("../src/img/clouds.png") repeat fixed;
 	background-size: 170%;
 }
 
